@@ -10,11 +10,11 @@
 
     // $films = $requete->fetch(PDO::FETCH_OBJ)
     // Boucle sur le donnees recuperees depuis la BDD
-    while($films = $requete->fetch(PDO::FETCH_OBJ)){
-      echo $films->titre;
-      echo $films->id;
+    // while($films = $requete->fetch(PDO::FETCH_OBJ)){
+    //   echo $films->titre;
+    //   echo $films->id;
 
-    }
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -90,6 +90,16 @@
         </p>
     </div>
     <div class="couverture cache"></div>
+    <section class="mx-24 my-16">
+        <h2 class="font-bold text-xl">Les derniers films</h2>
+        <div class="flex flex-wrap gap-4 mt-4">
+            <?php
+          while ($films = $requete->fetch(PDO::FETCH_OBJ)){
+           echo '<a class="w-36" href="#"><img title="'. $films->titre.'"src="uploads/'.$films->affiche.'" alt="'.$films->titre.'" class="hover:scale-110 transition-all">'.$films->titre.'</a>';
+          }
+      ?>
+        </div>
+    </section>
 
     <?php
     // Code PHP
@@ -117,7 +127,8 @@
 
                 <!-- question text -->
                 <div class="question-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod mi condimentum sapien
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod mi condimentum
+                    sapien
                     consequat maximus. In eget erat tortor.
                 </div>
             </article>
@@ -141,7 +152,8 @@
 
                 <!-- question text -->
                 <div class="question-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod mi condimentum sapien
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod mi condimentum
+                    sapien
                     consequat maximus. In eget erat tortor.
                 </div>
             </article>
@@ -165,7 +177,8 @@
 
                 <!-- question text -->
                 <div class="question-text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod mi condimentum sapien
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod mi condimentum
+                    sapien
                     consequat maximus. In eget erat tortor.
                 </div>
             </article>
