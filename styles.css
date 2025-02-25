@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap");
+
+.bebas-font {
+  font-family: "Bebas Neue", sans-serif;
+  color: red;
+  font-size: 3em;
+}
+
+/* SOULIGNE */
+
+.souligne {
+  position: relative;
+}
+
+.souligne::after {
+  content: "";
+  background-color: red;
+  position: absolute;
+  width: 0;
+  height: 3px;
+  left: 0;
+  bottom: -5px;
+  border-radius: 15px;
+  transition-duration: 150ms;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+}
+
+.souligne:hover::after {
+  width: 20px;
+}
+
+/* QUESTIONS */
+
+.question {
+  background: #000;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 0.7rem 1.5rem 0 1.5rem;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+.question-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: capitalize;
+  padding-bottom: 1rem;
+}
+
+.question-title p {
+  margin-bottom: 0;
+}
+
+.question-btn {
+  font-size: 1.5rem;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+.question-btn:hover {
+  transform: rotate(90deg);
+}
+
+.question-text {
+  padding: 1rem 0 1.5rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.question-text p {
+  margin-bottom: 0;
+}
+
+/* Texte caché */
+.question-text {
+  display: none;
+}
+
+.show-text .question-text {
+  display: block;
+}
+
+.minus-icon {
+  display: none;
+}
+
+.show-text .minus-icon {
+  display: inline;
+}
+
+.show-text .plus-icon {
+  display: none;
+}
+
+.nav-toggle {
+  font-size: 1.5rem;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.nav-toggle:hover {
+  transform: rotate(90deg);
+}
+.links a {
+  color: var(--clr-grey-3);
+  font-size: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s linear;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: red;
+  padding-left: 1.5rem;
+}
+
+.links {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s linear;
+  background-color: #fff;
+}
+
+.show-links {
+  height: 250px;
+  border: #000 1px solid;
+  padding-top: 2.5rem;
+}
+
+.fermer-modale {
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  font-size: 5rem;
+  color: #333;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* -------------------------- */
+/* CLASSES POUR AFFICHER LES FENETRES MODALES */
+.cache {
+  display: none;
+}
+
+.modale {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70%;
+
+  background-color: white;
+  padding: 6rem;
+  border-radius: 5px;
+  box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.couverture {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  z-index: 75;
+}
