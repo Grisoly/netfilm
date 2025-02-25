@@ -95,7 +95,7 @@
         <div class="flex flex-wrap gap-4 mt-4">
             <?php
           while ($films = $requete->fetch(PDO::FETCH_OBJ)){
-           echo '<a class="w-36" href="#"><img title="'. $films->titre.'"src="uploads/'.$films->affiche.'" alt="'.$films->titre.'" class="hover:scale-110 transition-all">'.$films->titre.'</a>';
+           echo '<a class="w-36" href="film.php?pageId='.$films->id.'"><img title="'. $films->titre.'"src="uploads/'.$films->affiche.'" alt="'.$films->titre.'" class="hover:scale-110 transition-all">'.$films->titre.'</a>';
           }
       ?>
         </div>
